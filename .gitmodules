@@ -1,6 +1,6 @@
 [submodule "3rdparty/qml-box2d"]
 	path = 3rdparty/qml-box2d
-	url = https://github.com/qml-box2d/qml-box2d
+	url = https://github.com/MetalBlueberry/qml-box2d
 	branch = master
 [submodule "3rdparty/tiled"]
 	path = 3rdparty/tiled
