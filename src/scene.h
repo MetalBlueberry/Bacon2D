@@ -47,7 +47,7 @@ class Scene : public QQuickItem
     Q_OBJECT
 
     Q_PROPERTY(bool running READ running NOTIFY runningChanged)
-    Q_PROPERTY(Viewport *viewport READ viewport WRITE setViewport NOTIFY viewportChanged)
+//    Q_PROPERTY(Viewport *viewport READ viewport WRITE setViewport NOTIFY viewportChanged)
     Q_PROPERTY(Game *game READ game CONSTANT)
     Q_PROPERTY(Box2DWorld *world READ world NOTIFY worldChanged)
     Q_PROPERTY(bool physics READ physics WRITE setPhysics NOTIFY physicsChanged)
@@ -71,8 +71,8 @@ public:
     bool running() const;
     void setRunning(const bool &running);
 
-    Viewport *viewport() const;
-    void setViewport(Viewport *viewport);
+//    Viewport *viewport() const;
+//    void setViewport(Viewport *viewport);
 
     Game *game() const;
     void setGame(Game *game);

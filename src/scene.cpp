@@ -30,7 +30,7 @@
 
 #include "game.h"
 #include "bacon2dlayer.h"
-#include "viewport.h"
+//#include "viewport.h"
 
 #include <QtCore/QtGlobal>
 #include <QtQml/QQmlEngine>
@@ -79,7 +79,7 @@
 Scene::Scene(Game *parent)
     : QQuickItem(parent)
     , m_running(false)
-    , m_viewport(0)
+//    , m_viewport(0)
     , m_game(parent)
     , m_world(0)
     , m_physics(false)
@@ -234,21 +234,21 @@ void Scene::setRunning(const bool &running)
  * \qmlproperty Viewport Scene::viewport
  * \brief Holds the a reference to the Viewport for the current Scene.
  */
-Viewport *Scene::viewport() const
-{
-    return m_viewport;
-}
+//Viewport *Scene::viewport() const
+//{
+//    return m_viewport;
+//}
 
-void Scene::setViewport(Viewport *viewport)
-{
-    if (m_viewport == viewport)
-        return;
+//void Scene::setViewport(Viewport *viewport)
+//{
+//    if (m_viewport == viewport)
+//        return;
 
-    m_viewport = viewport;
-    m_viewport->setScene(this);
+//    m_viewport = viewport;
+//    m_viewport->setScene(this);
 
-    emit viewportChanged();
-}
+//    emit viewportChanged();
+//}
 
 /*!
  * \qmlproperty Game Scene::game
@@ -527,8 +527,8 @@ void Scene::componentComplete()
     if (m_world)
         m_world->componentComplete();
 
-    if (m_viewport)
-        m_viewport->setScene(this);
+//    if (m_viewport)
+//        m_viewport->setScene(this);
 }
 
 void Scene::itemChange(ItemChange change, const ItemChangeData &data)
@@ -583,9 +583,9 @@ void Scene::geometryChanged(const QRectF &newGeometry, const QRectF &oldGeometry
     if (newGeometry.isEmpty() || !isComponentComplete() || (newGeometry == oldGeometry))
         return;
 
-    if (m_viewport && m_running) {
-        m_viewport->setScene(this);
-    }
+//    if (m_viewport && m_running) {
+//        m_viewport->setScene(this);
+//    }
     if (m_debug && m_debugDraw) {
         emit debugChanged();
     }
